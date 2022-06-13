@@ -1,1 +1,19 @@
 source ~/.vimrc
+
+let mapleader = " "
+
+" -------------Navigation Shortcuts-------------
+nmap <leader>th <action>(PreviousTab)
+nmap <leader>tl <action>(NextTab)
+" Change window left
+nmap <leader>wh <C-w>h
+" Change window right
+nmap <leader>wl <C-w>l
+" Change window down
+nmap <leader>wj <C-w>j
+" Change window up
+nmap <leader>wk <C-w>k
+
+" ---------------Intellij Shortcuts---------------
+nmap <leader>r <action>(RefactoringMenu)
+nmap <leader>q <action>(QuickActions)

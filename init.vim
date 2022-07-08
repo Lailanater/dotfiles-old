@@ -15,7 +15,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set scrolloff=8
-set colorcolumn=80
+set colorcolumn=100
 set signcolumn=yes
 
 " Plugin manager: vim-plug
@@ -26,8 +26,10 @@ call plug#begin()
 " Declare the list of plugins.
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'gruvbox-community/gruvbox'
+Plug 'jiangmiao/auto-pairs'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -38,6 +40,12 @@ let mapleader = " "
 inoremap jk <esc>
 inoremap kj <esc>
 
+" Find files using Telescop command-line sugar.
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
 fun! TrimWhitespace()
   let l:save = winsaveview()
   keeppatterns %s/\s\+$//e
@@ -47,4 +55,4 @@ endfun
 augroup LAILANATER
   autocmd!
   autocmd BufWritePre * :call TrimWhitespace()
-augroup END
+augroup ENDet exrc

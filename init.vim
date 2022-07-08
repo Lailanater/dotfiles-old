@@ -37,3 +37,14 @@ colorscheme gruvbox
 let mapleader = " "
 inoremap jk <esc>
 inoremap kj <esc>
+
+fun! TrimWhitespace()
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
+endfun
+
+augroup LAILANATER
+  autocmd!
+  autocmd BufWritePre * :call TrimWhitespace()
+augroup END

@@ -2,18 +2,34 @@ source ~/.vimrc
 
 let mapleader = " "
 
+set NERDTree
+nmap <leader>n :NERDTree<enter>
 " -------------Navigation Shortcuts-------------
-nmap <leader>th <action>(PreviousTab)
-nmap <leader>tl <action>(NextTab)
 " Change window left
 nmap <leader>wh <C-w>h
+
 " Change window right
 nmap <leader>wl <C-w>l
+
 " Change window down
 nmap <leader>wj <C-w>j
-" Change window up
+
+    " Change window up
 nmap <leader>wk <C-w>k
 
+" gd is 'Go to definition'
+" gb is 'Go back' command (Ctrl + O)
+nmap gb <C-O>
+
+nmap J <C-d>
+nmap K <C-u>
+
 " ---------------Intellij Shortcuts---------------
-nmap <leader>r <action>(RefactoringMenu)
+nmap <leader>rf <action>(RefactoringMenu)
+nmap <leader>rn <action>(RenameElement)
 nmap <leader>q <action>(QuickActions)
+nmap <leader>t <action>(ActivateTerminalToolWindow)
+nmap <leader>rt <action>(RunClass)
+nmap <leader>l <action>(ReformatCode)
+nmap <leader>o <action>(OptimizeImports)
+nmap gi <action>(GoToImplementation)
